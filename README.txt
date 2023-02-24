@@ -1,15 +1,5 @@
-***NOTE***
-For the step that required the view count API to be on all pages, I decided to make two seperate types 
-of view counts; one for the main page, and one for each individual blog post, so users will instead 
-see how many times each specific blog has been visited. It would have been possible to just simply include 
-the same API call in the blog view, but I thought it was a neat idea, and that the individual view 
-counters would look better/make more sense in the case of my specific project concept.
-
-
-
 ***README***
-Each section of this read me includes a brief description of the class/view, its features, as well 
-as which requirments from the instructions are satisfied. This project also includes a unit test class 
+Each section of this read me includes a brief description of the class/view, its features. This project also includes a unit test class 
 called BlogControllerTest.java that contains unit tests from each aspect of the controller class.
 
 Dependencies:
@@ -30,14 +20,6 @@ Features:
     POST /createBlog: Creates a new blog using the data from the submitted form.
     GET /blog: Renders a page for the specified blog.
 
-Requirements Met:
-    - contents from the form should be persisted if it passes validation (saved into a database)
-    - must take an optional get param to filter the list by an attribute
-    - There must be an API that returns the number of page hits since the server was online
-    - This api should be called asynchronously every 3 seconds and the results displayed on every page
-    - There must be at-least 1 dependency injected into two different locations in the project
-
-
 
 ***Blog.java***
 This is a Spring entity model for a blog:
@@ -54,11 +36,6 @@ Fields:
           getters, setters, and a no-args constructor. It also uses JSR-303 Bean Validation constraints to 
           validate the fields.
 
-Requirments Met:
-    - form must be validated on the server side (for every field)
-    - use of lombok in data classes
-
-
 
 ***index.html***
 This is an HTML page for displaying a list of blogs.
@@ -73,14 +50,6 @@ Features:
     A button to delete a blog post by ID.
     Uses Bootstrap for styling and layout, jQuery for the page visit counter, and Thymeleaf for displaying dynamic data.
 
-Requirements Met:
-    - A page that users can go to that lists the items created from the form in requirement 1 using Templates/Thymeleaf
-    - There must be an API that returns the number of page hits since the server was online
-    - This api should be called asynchronously every 3 seconds and the results displayed on every page
-    - must take an optional get param to filter the list by an attribute
-    - Aesthetically pleasing website (e.x using css or frameworks)
-
-
 
 ***Blog.html***
 This an HTML page that displays the details of a blog post.
@@ -92,17 +61,6 @@ Features:
     Responsive design using Bootstrap.
     The page uses Thymeleaf syntax to render the values of the blog post dynamically.
 
-Requirments Met:
-    - A page that users can go to that lists the items created from the form in requirement 1 using Templates/Thymeleaf
-    - Aesthetically pleasing website (e.x using css or frameworks)
-    - There must be an API that returns the number of page hits since the server was online
-    - This api should be called asynchronously every 3 seconds and the results displayed on every page
-
-Note: In order to follow the API requirements, the view count is reset during every initialization of the server, so 
-      that the views are counted per server session. This can be modified by simply removing the initialization of 
-      the 'views' attribute from the BlogController constructor. 
-
-
 
 ***createBlog.html***
 This is an HTML form for creating a blog
@@ -113,10 +71,3 @@ Features:
     Thymeleaf for form handling and validation
     A form that submits to the createBlog action, and binds the fields to a blog object 
     Error messages for each field if there are any validation errors.
-
-Requirements Met:
-    - A page with a form where users have to input information
-    - must have atleast 3 fields for the user to fill out
-    - form must be validated on the server side (for every field)
-    - contents from the form should be persisted if it passes validation (saved into a database)
-    - Aesthetically pleasing website (e.x using css or frameworks)
