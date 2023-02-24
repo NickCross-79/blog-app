@@ -10,9 +10,9 @@ import org.springframework.ui.ExtendedModelMap;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.finalproject.app.blog.Blog;
-import com.finalproject.app.blog.BlogController;
-import com.finalproject.app.blog.BlogRepository;
+import com.blogApp.app.blog.Blog;
+import com.blogApp.app.blog.BlogController;
+import com.blogApp.app.blog.BlogRepository;
 
 public class BlogControllerTest {
     private BlogRepository mockBlogRepository;

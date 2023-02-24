@@ -1,4 +1,4 @@
-package com.finalproject.app.blog;
+package com.blogApp.app.blog;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package com.finalproject.app.blog;
+package com.blogApp.app.blog;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
