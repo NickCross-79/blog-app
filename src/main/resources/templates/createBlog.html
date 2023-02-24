@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body style="background-color: #f7f7f7;">
+    <div class="container mt-3" style="max-width: 960px;">
+        <h1 class="text-center" style="color: #333; font-family: 'Roboto', sans-serif; margin: 30px 0; font-size: 48px; font-weight: bold;">Create Blog</h1>
+
+        <form action="#" th:action="@{createBlog}" th:object="${blog}" method="post">
+            <div class="form-group">
+                <label for="title" style="color: #333; font-family: 'Roboto', sans-serif;">Title</label>
+                <input type="text" class="form-control" th:field="*{title}" id="title" >
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+            </div>
+            <div class="form-group">
+                <label for="category" style="color: #333; font-family: 'Roboto', sans-serif;">Category</label>
+                <select class="form-control" th:field="*{category}" id="category" >
+                    <option value=""></option>
+                    <option value="Sports">Sports</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Science">Science</option>
+                    <option value="Food">Food</option>
+                </select>
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
+            </div>
+            <div class="form-group">
+                <label for="author" style="color: #333; font-family: 'Roboto', sans-serif;">Author</label>
+                <input type="text" class="form-control" th:field="*{author}" id="author" >
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></div>
+            </div>
+            <div class="form-group">
+                <label for="body" style="color: #333; font-family: 'Roboto', sans-serif;">Body</label>
+                <textarea class="form-control" th:field="*{body}" id="body" rows="3" ></textarea>
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+    </div>
+</body>
+</html>
